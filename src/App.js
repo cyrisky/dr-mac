@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 import Login from "./pages/Login";
 import Game from "./pages/Game";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {

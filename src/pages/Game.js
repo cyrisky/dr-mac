@@ -4,14 +4,16 @@ import batu from '../assets/games/batu.png'
 import kertas from '../assets/games/kertas.png'
 import gunting from '../assets/games/gunting.png'
 import refresh from '../assets/games/refresh.png'
-
+import NavbarTop from '../components/Navbar.js'
 
 class Game extends Component{
     render(){
         return (
+  
 
             <Fragment>
-
+                <NavbarTop />                                     
+       
                 <div class="container-fluid" >
                     <div class="wrapper-2">
                     <div class="upper-link" id="kembali">

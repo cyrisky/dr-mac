@@ -735,4 +735,39 @@ font-size: 1rem;
       font-size: 1rem;
     }
   }
+
+/*navbar*/
+
+  .jumbotron1{
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    color: #fff;
+    text-align: center;
+    font-family: 'Arial';
+    font-weight: bold;
+    font-style: normal;
+      }
+  
+  .nav-item{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 16px;
+  padding-left: 35px;
+  }
+  .nav-item2{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 16px;
+  padding-left: 35px;
+  }
   
