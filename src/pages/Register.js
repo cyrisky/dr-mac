@@ -1,6 +1,7 @@
 // import React, { useState } from "react";
-import React, { Component,Fragment } from "react";
-import { Form } from 'reactstrap'
+import React, { Component, Fragment } from "react";
+import { Container, Button, Form, FormGroup, Label, Input} from 'reactstrap'
+import "../index.css";
 import NavbarTop from '../components/NavbarTop'
 // import Axios from 'axios'
 // import { useHistory } from 'react-router';
@@ -34,35 +35,46 @@ import NavbarTop from '../components/NavbarTop'
 class Register extends Component {
     render() {
         return (
+        <Fragment>
+        <NavbarTop />
+
+        <FormGroup className="outer">
+        <FormGroup className="inner">
             <Form>
                 <h3>Register</h3>
 
-                <div className="form-group">
-                    <label>Name</label>
-                    <input type="text" className="form-control" placeholder="Enter player name" />
-                </div>
+                <FormGroup className="form-group">
+                    <Label>Name</Label>
+                    <Input type="text" className="form-control" placeholder="Enter player name" />
+                </FormGroup>
 
-                <div className="form-group">
-                    <label>Username</label>
-                    <input type="username" className="form-control" placeholder="Enter username" />
-                </div>
+                <FormGroup className="form-group">
+                    <Label>Username</Label>
+                    <Input type="username" className="form-control" placeholder="Enter username" />
+                </FormGroup>
 
-                <div className="form-group">
-                    <label>Email</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
+                <FormGroup className="form-group">
+                    <Label>Email</Label>
+                    <Input type="email" className="form-control" placeholder="Enter email" />
+                </FormGroup>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
-                <br>
-                </br>
-                <button type="submit" className="btn btn-dark btn-lg btn-block">Register</button>
+                <FormGroup className="form-group">
+                    <Label>Password</Label>
+                    <Input type="password" className="form-control" placeholder="Enter password" />
+                </FormGroup>
+               
+                <Button type="submit" className="btn btn-dark btn-lg btn-block">Register</Button>
                 <p className="forgot-password text-right">
-                    Already registered? <a href="#">Log in</a>
+                    Already registered? <a href="/login">Log in</a>
                 </p>
             </Form>
+        </FormGroup>
+        </FormGroup>
+
+        </Fragment>
+
+            
+            
         );
     }
 }

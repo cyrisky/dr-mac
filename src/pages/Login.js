@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from "react";
 import Axios from 'axios';
-import { Form } from 'reactstrap'
-import NavbarTop from '../components/NavbarTop'
+import { Container, Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap'
+//import NavbarTop from '../components/NavbarTop'
+import "../index.css";
+import NavbarTop from "../components/NavbarTop";
 
 class Login extends Component {
 
@@ -63,38 +65,41 @@ class Login extends Component {
 
     render() {
         return (
-            // <Fragment>
-            
+        <Fragment>
+        
+        <NavbarTop />
+        <FormGroup className="outer">
+        <FormGroup className="inner">
             <Form>
-
                 <h3>Log in</h3>
 
-                <div className="form-group">
-                    <label>Email</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
+                <FormGroup>
+                    <Label>Email</Label>
+                    <Input type="email" className="form-control" placeholder="Enter email" />
+                </FormGroup>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
+                <FormGroup>
+                    <Label>Password</Label>
+                    <Input type="password" className="form-control" placeholder="Enter password" />
+                </FormGroup>
 
-                <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1"> Remember me</label>
-                    </div>
-                </div>
+                <FormGroup>
+                    <FormGroup className="custom-control custom-checkbox">
+                        <Input type="checkbox" className="custom-control-input" id="customCheck1" />
+                        <Label className="custom-control-label" htmlFor="customCheck1"> Remember me</Label>
+                    </FormGroup>
+                </FormGroup>
 
-                <br></br>
-
-                <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                <Button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</Button>
                 <p className="forgot-password text-right">
                     <a href="#"> Forgot password?</a>
                 </p>
 
             </Form>
-            // </Fragment>
+            </FormGroup>
+            </FormGroup>
+
+            </Fragment>
         );
     }
 }

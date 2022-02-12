@@ -8,7 +8,7 @@ class NavbarTop extends Component {
         this.setState({isOpen: !this.state.isOpen})
     }
 
-    ender() {
+    render() {
         const { isOpen } = this.state
         return (
             <Navbar color="dark" dark expand="lg">
@@ -23,7 +23,7 @@ class NavbarTop extends Component {
                             <Link to="/about">Game List</Link>
                         </NavItem>
                         <NavItem className="px-2">
-                            <Link to="/contact">Sign Up</Link>
+                            <Link to="/register">Sign Up</Link>
                         </NavItem>
                         <NavItem className="px-2">
                             <Link to="/login">Login</Link>
