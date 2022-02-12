@@ -10,7 +10,7 @@ function App() {
   return ( 
   <Router>
     <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+      {/* <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to={"/login"}>DR.MAC Binar</Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -24,7 +24,7 @@ function App() {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav>  */}
 
       <div className="outer">
         <div className="inner">
