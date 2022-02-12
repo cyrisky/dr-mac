@@ -78,7 +78,7 @@ class Profile extends React.Component {
                         <CardText className="fw-light mt-3">
                           A gamer is a person who plays interactive games, especially video games, tabletop role-playing games, and skill-based card games, and who plays for usually long periods of time.
                         </CardText>
-                        <Button color="text-dark" href='/edit-profile'>
+                        <Button color="text-dark btn-dark" href='/edit-profile'>
                           Edit Profile
                         </Button>
                       </CardBody>
