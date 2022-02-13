@@ -1,82 +1,115 @@
-// import React, { useState } from "react";
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, useState } from "react";
 import { Container, Button, Form, FormGroup, Label, Input} from 'reactstrap'
 import "../index.css";
 import NavbarTop from '../components/NavbarTop'
-// import Axios from 'axios'
-// import { useHistory } from 'react-router';
 
-// const Register = () => {
 
-    // const [fullname, setFullname] = useState("")
-    // const [username, setUsername] = useState("")
-    // const [email, setEmail] = useState("")
-    // const [password, setPassword] = useState("")
-  
-    // const history = useHistory();
-  
-    // const register = (event) => {
-    //   Axios.post("auth/register", {
-    //     fullname: fullname,
-    //     username: username,
-    //     password: password,
-    //     email: email,
-    //   })
-    //     .then((response) => {
-    //       console.log(response)
-    //       history.push('/login')
-    //     })
-    //     .catch((err) => {
-    //       console.log(err)
-    //     })
-    //   event.preventDefault();
-    // }
+export default function Register () {
 
-class Register extends Component {
-    render() {
-        return (
+    // States for registration
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+ 
+  // States for checking the errors
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+ 
+  // Name change handling
+  const handleName = (e) => {
+    setName(e.target.value);
+    setSubmitted(false);
+  };
+ 
+  // Email change handling
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+    setSubmitted(false);
+  };
+ 
+  // Password change handling
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+    setSubmitted(false);
+  };
+ 
+  // Handling the form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (name === '' || email === '' || password === '') {
+      setError(true);
+    } else {
+      setSubmitted(true);
+      setError(false);
+    }
+  };
+ 
+  // Showing success message
+  const successMessage = () => {
+    return (
+      <div
+        className="success"
+        style={{
+          display: submitted ? '' : 'none',
+        }}>
+        <h3>User {name} successfully registered!!</h3>
+      </div>
+    );
+  };
+ 
+  // Showing error message jika error is true
+  const errorMessage = () => {
+    return (
+      <div
+        className="error"
+        style={{
+          display: error ? '' : 'none',
+        }}>
+        <h1>Please enter all the fields</h1>
+      </div>
+    );
+  };
+
+    return (
         <Fragment>
         <NavbarTop />
-
+        <Container>
         <FormGroup className="outer">
+            
         <FormGroup className="inner">
             <Form>
-                <h3>Register</h3>
+                <h3>User Registration</h3>
 
                 <FormGroup className="form-group">
-                    <Label>Name</Label>
-                    <Input type="text" className="form-control" placeholder="Enter player name" />
+                    <Label className="label">Name</Label>
+                    <Input onChange={handleName} value={name}type="text" className="form-control" placeholder="Enter player name" />
                 </FormGroup>
 
                 <FormGroup className="form-group">
-                    <Label>Username</Label>
-                    <Input type="username" className="form-control" placeholder="Enter username" />
+                    <Label className="label">Email</Label>
+                    <Input onChange={handleEmail} value={email} type="email" className="form-control" placeholder="Enter email" />
                 </FormGroup>
 
                 <FormGroup className="form-group">
-                    <Label>Email</Label>
-                    <Input type="email" className="form-control" placeholder="Enter email" />
-                </FormGroup>
-
-                <FormGroup className="form-group">
-                    <Label>Password</Label>
-                    <Input type="password" className="form-control" placeholder="Enter password" />
+                    <Label className="label">Password</Label>
+                    <Input onChange={handlePassword} value={password} type="password" className="form-control" placeholder="Enter password" />
                 </FormGroup>
                
-                <Button type="submit" className="btn btn-dark btn-lg btn-block">Register</Button>
+                <Button onClick={handleSubmit} type="submit" className="btn btn-dark btn-lg btn-block">Register</Button>
                 <p className="forgot-password text-right">
                     Already registered? <a href="/login">Log in</a>
                 </p>
             </Form>
         </FormGroup>
+        {/* Calling to the methods */}
+            <div className="messages d-flex justify-content-between">
+                {errorMessage()}
+                {successMessage()}
+            </div>
         </FormGroup>
-
+        </Container>
         </Fragment>
-
-            
             
         );
-    }
 }
 
-export default Register

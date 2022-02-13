@@ -1,7 +1,5 @@
-import React, { Component, Fragment } from "react";
-import Axios from 'axios';
-import { Container, Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap'
-//import NavbarTop from '../components/NavbarTop'
+import React, { Component, Fragment, useState } from "react";
+import { Container, Button, Form, FormGroup, Label, Input} from 'reactstrap'
 import "../index.css";
 import NavbarTop from "../components/NavbarTop";
 
@@ -66,8 +64,8 @@ class Login extends Component {
     render() {
         return (
         <Fragment>
-        
         <NavbarTop />
+        <Container>
         <FormGroup className="outer">
         <FormGroup className="inner">
             <Form>
@@ -98,7 +96,7 @@ class Login extends Component {
             </Form>
             </FormGroup>
             </FormGroup>
-
+            </Container>
             </Fragment>
         );
     }
