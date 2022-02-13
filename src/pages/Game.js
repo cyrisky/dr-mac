@@ -4,7 +4,8 @@ import batu from '../assets/games/batu.png'
 import kertas from '../assets/games/kertas.png'
 import gunting from '../assets/games/gunting.png'
 import refresh from '../assets/games/refresh.png'
-import NavbarTop from '../components/Navbar.js'
+import NavbarTop from '../components/NavbarTop'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Game extends Component{
     render(){
@@ -12,74 +13,77 @@ class Game extends Component{
   
 
             <Fragment>
-                <NavbarTop />                                     
+                <>
+                <NavbarTop sticky="top" />                 
+                </>
+                                               
        
-                <div class="container-fluid" >
-                    <div class="wrapper-2">
-                    <div class="upper-link" id="kembali">
+                {/* <div className="container-fluid" >
+                    <div className="wrapper-2">
+                    <div className="upper-link" id="kembali">
                     <a href="index.html"><ion-icon name="arrow-back-outline" size="large"></ion-icon></a>
                     </div>
 
-                    <div class="upper-link">
+                    <div className="upper-link">
                         logo
-                    </div><div class="wrapper-2"></div>
+                    </div><div className="wrapper-2"></div>
 
-                    <div class="upper-link"  id="kembali"><p>ROCK PAPER SCISSOR</p></div>
+                    <div className="upper-link"  id="kembali"><p>ROCK PAPER SCISSOR</p></div>
                     </div>
-                </div>
+                </div> */}
 
 
+            
+                <div className="container-game">
+                    <div className="wrapper wrapper-3">
+                        <div className="user">
 
-                <div class="container-game">
-                    <div class="wrapper wrapper-3">
-                        <div class="user">
-
-                            <div class="box-4">
+                            <div className="box-4">
                                 <p>PLAYER</p>
                             </div>
 
-                            <div class="box-3" id="batu-p" value='batu'>
-                                <img class="suit" src={batu} alt="Batu" />
+                            <div className="box-3" id="batu-p" value='batu'>
+                                <img className="suit" src={batu} alt="Batu" />
                             </div>
 
-                            <div class="box-3" id="kertas-p" value='kertas'>
-                                <img class="suit" src={kertas} alt="kertas" />
+                            <div className="box-3" id="kertas-p" value='kertas'>
+                                <img className="suit" src={kertas} alt="kertas" />
                             </div>
 
-                            <div class="box-3" id="gunting-p" value='gunting'>
-                                <img class="suit" src={gunting} alt="gunting" />    
+                            <div className="box-3" id="gunting-p" value='gunting'>
+                                <img className="suit" src={gunting} alt="gunting" />    
                             </div>
                         </div>
 
-                        <div class="mid">
-                            <div class="result" id="hasil">VS</div>
+                        <div className="mid">
+                            <div className="result" id="hasil">VS</div>
                         </div> 
 
-                        <div class="com">
-                            <div class="box-4">
+                        <div className="com">
+                            <div className="box-4">
                             <p>COM</p>
                             </div>
                             
-                            <div class="box-3" id="batu-c" value='batu'>
-                                <img class="suit" src={batu} alt="Batu" />
+                            <div className="box-3" id="batu-c" value='batu'>
+                                <img className="suit" src={batu} alt="Batu" />
                             </div>
 
-                            <div class="box-3" id="kertas-c" value='kertas'>
-                                <img class="suit" src={kertas} alt="kertas" />
+                            <div className="box-3" id="kertas-c" value='kertas'>
+                                <img className="suit" src={kertas} alt="kertas" />
                             </div>
 
-                            <div class="box-3" id="gunting-c" value='gunting'>
-                                <img class="suit" src={gunting} alt="gunting" /> 
+                            <div className="box-3" id="gunting-c" value='gunting'>
+                                <img className="suit" src={gunting} alt="gunting" /> 
                             </div>   
                         </div>
                     </div>
                 </div> 
 
-                <div class="container-game">
-                    <div class="wrapper wrapper-3">
-                        <div class="refresh">
-                            <div class="box-2" id="refresh">
-                                <img class="ref-btn" src={refresh} alt="gunting" />
+                <div className="container-game">
+                    <div className="wrapper wrapper-3">
+                        <div className="refresh">
+                            <div className="box-2" id="refresh">
+                                <img className="ref-btn" src={refresh} alt="gunting" />
                             </div>  
                         </div>   
                     </div>
