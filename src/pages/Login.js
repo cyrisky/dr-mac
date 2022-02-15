@@ -1,6 +1,6 @@
 import React, { Component, Fragment, useState } from "react";
 import { Container, Button, Form, FormGroup, Label, Input} from 'reactstrap'
-import "../index.css";
+import "./LoginRegister.css";
 import NavbarTop from "../components/NavbarTop";
 
 class Login extends Component {

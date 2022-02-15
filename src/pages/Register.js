@@ -1,7 +1,8 @@
 import React, { Component, Fragment, useState } from "react";
 import { Container, Button, Form, FormGroup, Label, Input} from 'reactstrap'
-import "../index.css";
+import "./LoginRegister.css";
 import NavbarTop from '../components/NavbarTop'
+import Footer from '../components/Footer'
 
 
 export default function Register () {
@@ -65,7 +66,7 @@ export default function Register () {
         style={{
           display: error ? '' : 'none',
         }}>
-        <h1>Please enter all the fields</h1>
+        <h3>Please enter all the fields</h3>
       </div>
     );
   };
@@ -102,12 +103,13 @@ export default function Register () {
             </Form>
         </FormGroup>
         {/* Calling to the methods */}
-            <div className="messages d-flex justify-content-between">
+            <div class="d-flex justify-content-center" className="messages">
                 {errorMessage()}
                 {successMessage()}
             </div>
         </FormGroup>
         </Container>
+        <Footer />
         </Fragment>
             
         );
