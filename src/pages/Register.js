@@ -1,7 +1,5 @@
 import React, { Component, Fragment, useState } from "react";
-import { Container, Button, Form, FormGroup, Label, Input} from 'reactstrap';
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import {auth} from '../services/firebase'
+import { Container, Button, Form, FormGroup, Label, Input} from 'reactstrap'
 import "../index.css";
 import NavbarTop from '../components/NavbarTop'
 
