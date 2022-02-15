@@ -5,10 +5,39 @@ import kertas from '../assets/games/kertas.png'
 import gunting from '../assets/games/gunting.png'
 import refresh from '../assets/games/refresh.png'
 import NavbarTop from '../components/NavbarTop'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+// let play = () => console.log('batu')
+// let playGunting = () => console.log('gunting')
+// let playKertas = () => console.log('kertas')
+import {Helmet} from "react-helmet";
+// import GameSuit from "../assets/js/game-suit";
+
+
 
 class Game extends Component{
+    
+    playerChoose = (player) => {
+                
+        const comShuffle = ['batu', 'kertas', 'gunting'];
+        this.comChoose = comShuffle[Math.floor(Math.random() * comShuffle.length)];
+
+        if(player === this.comChoose){
+            alert(`Hello, ${player}! ${this.comChoose} draw`);
+          
+        }else if (
+            (player === "batu" && this.comChoose === "gunting") || (player === "gunting" && this.comChoose === "kertas") || (player === "kertas" && this.comChoose === "batu")
+            ){
+                alert(`Hello, ${player}! ${this.comChoose} player win`);
+        }else{
+            alert(`Hello, ${player}! ${this.comChoose} com win`);
+        }
+
+       
+      };
+    
+      
     render(){
+
         return (
   
 
@@ -16,24 +45,9 @@ class Game extends Component{
                 <>
                 <NavbarTop sticky="top" />                 
                 </>
-                                               
-       
-                {/* <div className="container-fluid" >
-                    <div className="wrapper-2">
-                    <div className="upper-link" id="kembali">
-                    <a href="index.html"><ion-icon name="arrow-back-outline" size="large"></ion-icon></a>
-                    </div>
 
-                    <div className="upper-link">
-                        logo
-                    </div><div className="wrapper-2"></div>
-
-                    <div className="upper-link"  id="kembali"><p>ROCK PAPER SCISSOR</p></div>
-                    </div>
-                </div> */}
-
-
-            
+                                 
+                        
                 <div className="container-game">
                     <div className="wrapper wrapper-3">
                         <div className="user">
@@ -42,15 +56,15 @@ class Game extends Component{
                                 <p>PLAYER</p>
                             </div>
 
-                            <div className="box-3" id="batu-p" value='batu'>
+                            <div onClick={() => {this.playerChoose("batu")}} className="box-3" id="batu-p">
                                 <img className="suit" src={batu} alt="Batu" />
                             </div>
 
-                            <div className="box-3" id="kertas-p" value='kertas'>
+                            <div onClick={() => {this.playerChoose("kertas")}}  className="box-3" id="kertas-p" >
                                 <img className="suit" src={kertas} alt="kertas" />
                             </div>
 
-                            <div className="box-3" id="gunting-p" value='gunting'>
+                            <div onClick={() => {this.playerChoose("gunting")}} className="box-3" id="gunting-p">
                                 <img className="suit" src={gunting} alt="gunting" />    
                             </div>
                         </div>
@@ -64,15 +78,15 @@ class Game extends Component{
                             <p>COM</p>
                             </div>
                             
-                            <div className="box-3" id="batu-c" value='batu'>
+                            <div  className="box-3" id="batu-c" value='batu'>
                                 <img className="suit" src={batu} alt="Batu" />
                             </div>
 
-                            <div className="box-3" id="kertas-c" value='kertas'>
+                            <div  className="box-3" id="kertas-c" value='kertas'>
                                 <img className="suit" src={kertas} alt="kertas" />
                             </div>
 
-                            <div className="box-3" id="gunting-c" value='gunting'>
+                            <div  className="box-3" id="gunting-c" value='gunting'>
                                 <img className="suit" src={gunting} alt="gunting" /> 
                             </div>   
                         </div>
@@ -88,6 +102,12 @@ class Game extends Component{
                         </div>   
                     </div>
                 </div>
+                
+                <Helmet>
+                <script src="../assets/js/game-suit.js" type="text/javascript"></script>
+                </Helmet>
+                
+                
 
             </Fragment>
             
