@@ -1,0 +1,21 @@
+.nav-item{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 35px;
+    }
+    
+.nav-item2{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 35px;
+    }

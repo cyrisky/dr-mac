@@ -1,19 +1,23 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+import Login from './pages/Login'
+import Register from './pages/Register'
 import Home from "./pages/home";
 
-
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-        </Routes>
-      </Router>
-    )
-  }
+function App() {
+  return ( 
+  <Router>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/register" element={<Register/>} />
+          </Routes>
+  </Router>
+  
+  );
 }
 
 export default App;
