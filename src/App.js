@@ -7,6 +7,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from "./pages/home";
 import Game from "./pages/Game";
+import Homepageplayers from "./pages/Homepageplayer";
+import Profile from "./pages/Profile";
 
 function App() {
   return ( 
@@ -16,10 +18,13 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register/>} />
             <Route exact path="/game" element={<Game />} />
+            <Route exact path="/homepageplayer" element={<Homepageplayers />} />
+            <Route exact path="/profile" element={<Profile />} />
           </Routes>
   </Router>
   
   );
+
 }
 
 export default App;
