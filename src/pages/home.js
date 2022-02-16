@@ -18,16 +18,16 @@ class Home extends React.Component {
                                         <a class="nav-link active fw-bold " aria-current="page" href="#">HOME</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text fw-bold" href="#">GAME LIST</a>
+                                        <a class="nav-link text fw-bold" href="GameList">GAME LIST</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link fw-bold" href="#">PROFILE</a>
+                                        <a class="nav-link fw-bold" href="Profile">PROFILE</a>
                                     </li>
                                     <li class="nav-item2">
-                                        <a class="nav-link fw-bold" href="#">SIGN UP</a>
+                                        <a class="nav-link fw-bold" href="Register">SIGN UP</a>
                                     </li>
                                     <li class="nav-item2">
-                                        <a class="nav-link fw-bold" href="#">LOGIN</a>
+                                        <a class="nav-link fw-bold" href="Login">LOGIN</a>
                                     </li>
                                 </ul>
                             </div>
@@ -36,7 +36,7 @@ class Home extends React.Component {
 
                     <h1 class="display-4">PLAY TRADITIONAL GAME</h1>
                     <p class="lead">Experience new traditional game play</p>
-                    <a class="btn btn-warning btn-lg" href="#" role="button">PLAY NOW</a>
+                    <a class="btn btn-warning btn-lg" href="Game" role="button">PLAY NOW</a>
 
                 </div>
                 
