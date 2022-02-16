@@ -3,7 +3,7 @@ import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import { withRouter } from '../libs/withRouter';
 import { auth } from '../services/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import "../index.css";
+import "./LoginRegister.css";
 import NavbarTop from "../components/NavbarTop";
 
 const Login = (props) => {
@@ -56,6 +56,9 @@ const Login = (props) => {
                             </FormGroup>
 
                             <Button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</Button>
+                            <p className="register-first text-right">
+                                <a href="Register"> Register first?</a>
+                            </p>
                             <p className="forgot-password text-right">
                                 <a href="#"> Forgot password?</a>
                             </p>

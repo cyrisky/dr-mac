@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // let play = () => console.log('batu')
 // let playGunting = () => console.log('gunting')
 // let playKertas = () => console.log('kertas')
-import {Helmet} from "react-helmet";
+// import {Helmet} from "react-helmet";
 // import GameSuit from "../assets/js/game-suit";
 
 

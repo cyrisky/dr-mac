@@ -1,8 +1,9 @@
 import React, { Component, Fragment, useState } from "react";
 import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap'
+
 import { auth } from '../services/firebase'
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import "../index.css";
+import "./LoginRegister.css";
 import NavbarTop from '../components/NavbarTop'
 
 
