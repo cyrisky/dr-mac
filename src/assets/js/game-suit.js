@@ -22,6 +22,7 @@ class GameSuit{
     bet(){
         const comShuffle = ['batu', 'kertas', 'gunting'];
         this.comChoose = comShuffle[Math.floor(Math.random() * comShuffle.length)];
+        
     }
 
     logic(){
