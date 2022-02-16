@@ -1,9 +1,9 @@
 import React, { Component, Fragment, useState } from "react";
 import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import { withRouter } from '../libs/withRouter';
-import { auth } from '../services/Firebase';
+import { auth } from '../services/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import "../index.css";
+import "./LoginRegister.css";
 import NavbarTop from "../components/NavbarTop";
 
 const Login = (props) => {
