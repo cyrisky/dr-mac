@@ -1,105 +1,71 @@
 import React, { Component, Fragment, useState } from "react";
-import { Container, Button, Form, FormGroup, Label, Input} from 'reactstrap'
-import "./LoginRegister.css";
+import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { withRouter } from '../libs/withRouter';
+import { auth } from '../services/Firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import "../index.css";
 import NavbarTop from "../components/NavbarTop";
 
-class Login extends Component {
+const Login = (props) => {
+    const [inputValue, setInputValue] = useState({ email: '', password: '' })
+    const { email, password } = inputValue
 
-    // constructor(props) {
-    //     super(props)
-    
-    //     this.state = {
-    //       email: '',
-    //       password: '',
-    //       loginStatus: false
-    //     }
-    //   }
-    
-    //   emailHandler = (event) => {
-    //     this.setState({ email: event.target.value });
-    //   };
-    
-    //   passwordHandler = (event) => {
-    //     this.setState({ password: event.target.value });
-    //   };
-    
-    //   login = (event) => {
-    //     event.preventDefault();
-    
-    //     const data = {
-    //       email: this.state.email,
-    //       password: this.state.password
-    //     }
-    
-    //     const checkToken = (data) => {
-    //       if (data === "Wrong password!") {
-    //         this.props.history.push('/login')
-    //         alert(data)
-    //       } else {
-    //         this.props.history.push('/login')
-    //         alert(data)
-    //       }
-    //     }
-    
-    //     Axios.post("auth/login", data)
-    //       .then((res) => {
-    //         if (!res.data) {
-    //           this.setState({ loginStatus: false });
-    //           console.log("Silahkan login")
-    //         } else {
-    //           if (res.data.email) {
-    //             this.setState({ loginStatus: true });
-    //             localStorage.setItem('token', "Bearer " + res.data.accessToken);
-    //             this.props.history.push('/home');
-    //           } else {
-    //             checkToken(res.data);
-    //           }
-    //         }
-    //       }).catch((err) => {
-    //         this.props.history.push('/login')
-    //       });
-    
-    //   }
+    const handleInput = (e) => {
+        const { name, value } = e.target
+        setInputValue({ ...inputValue, [name]: value })
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        signInWithEmailAndPassword(auth, email, password)
+            .then(userCredential => {
+                const isLogin = userCredential.user
+                if (isLogin) {
+                    setInputValue({ email: '', password: '' })
+                    props.navigate('/homepageplayer')
+                }
+            })
+            .catch(err => {
+                alert(err.message)
+            })
+    }
 
-    render() {
-        return (
+    return (
         <Fragment>
-        <NavbarTop />
-        <Container>
-        <FormGroup className="outer">
-        <FormGroup className="inner">
-            <Form>
-                <h3>Log in</h3>
+            <NavbarTop />
+            <Container>
+                <FormGroup className="outer">
+                    <FormGroup className="inner">
+                        <Form onSubmit={handleSubmit}>
+                            <h1>Log in</h1>
 
-                <FormGroup>
-                    <Label>Email</Label>
-                    <Input type="email" className="form-control" placeholder="Enter email" />
-                </FormGroup>
+                            <FormGroup>
+                                <Label>Email</Label>
+                                <Input id='email' name="email" type="email" placeholder="Enter email" onChange={handleInput} />
+                            </FormGroup>
 
-                <FormGroup>
-                    <Label>Password</Label>
-                    <Input type="password" className="form-control" placeholder="Enter password" />
-                </FormGroup>
+                            <FormGroup>
+                                <Label>Password</Label>
+                                <Input id='password' name="password" type="password" placeholder="Enter password" onChange={handleInput} />
+                            </FormGroup>
 
-                <FormGroup>
-                    <FormGroup className="custom-control custom-checkbox">
-                        <Input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <Label className="custom-control-label" htmlFor="customCheck1"> Remember me</Label>
+                            <FormGroup>
+                                <FormGroup className="custom-control custom-checkbox">
+                                    <Input type="checkbox" className="custom-control-input" id="customCheck1" />
+                                    <Label className="custom-control-label" htmlFor="customCheck1"> Remember me</Label>
+                                </FormGroup>
+                            </FormGroup>
+
+                            <Button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</Button>
+                            <p className="forgot-password text-right">
+                                <a href="#"> Forgot password?</a>
+                            </p>
+
+                        </Form>
                     </FormGroup>
                 </FormGroup>
-
-                <Button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</Button>
-                <p className="forgot-password text-right">
-                    <a href="#"> Forgot password?</a>
-                </p>
-
-            </Form>
-            </FormGroup>
-            </FormGroup>
             </Container>
-            </Fragment>
-        );
-    }
+        </Fragment>
+    );
 }
 
-export default Login;
+export default withRouter(Login);
