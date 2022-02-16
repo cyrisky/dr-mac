@@ -37,9 +37,6 @@ class Game extends Component{
             boxColor6:  '',
             result: 'VS'
           }));
-
-        
-        
       }
     
     playerChoose = (player) => {
@@ -49,43 +46,29 @@ class Game extends Component{
 
         if(this.comChoose === 'batu'){
             this.setState(() => ({
-                boxColor4:  'red',
-                boxColor5:  'blue',
-                boxColor6:  'blue',
+                boxColor4:  'gold',
               }));
         }else if(this.comChoose === 'kertas'){
             this.setState(() => ({
-                boxColor4:  'blue',
-                boxColor5:  'red',
-                boxColor6:  'blue',
+                boxColor5:  'gold',
               }));
         }else{
             this.setState(() => ({
-                boxColor4:  'blue',
-                boxColor5:  'blue',
-                boxColor6:  'red',
+                boxColor6:  'gold',
               }));
         }
 
-
-
         if(player === 'batu'){
             this.setState(() => ({
-                boxColor:  'red',
-                boxColor2:  'blue',
-                boxColor3:  'blue',
+                boxColor:  'gold',
               }));
         }else if (player === 'kertas'){
             this.setState(() => ({
-                boxColor:  'blue',
-                boxColor2:  'red',
-                boxColor3:  'blue',
+                boxColor2:  'gold',
               }));
         }else{
             this.setState(() => ({
-                boxColor:  'blue',
-                boxColor2:  'blue',
-                boxColor3:  'red',
+                boxColor3:  'gold',
               }));
         }
 
@@ -107,7 +90,6 @@ class Game extends Component{
             this.setState({ result: "Com Win"});
         }
 
-       
       };
     
       
