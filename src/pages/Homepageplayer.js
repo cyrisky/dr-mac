@@ -30,8 +30,8 @@ class Homepageplayer extends Component {
                         <div class="col-lg-4">
                             <div class="team-member">
                                 <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
-                                <h4>Riana Richis</h4>
-                                <p class="text-muted">Points: 9,635</p>
+                                <h4>Riana </h4>
+                                <p class="text-muted">Points: 240</p>
                                 <p class="text-muted">Tourn Played: 24</p>
                                 <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
@@ -41,8 +41,8 @@ class Homepageplayer extends Component {
                         <div class="col-lg-4">
                             <div class="team-member">
                                 <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
-                                <h4>Atlas Halilintar</h4>
-                                <p class="text-muted">Points: 7,875</p>
+                                <h4>Atlas</h4>
+                                <p class="text-muted">Points: 130</p>
                                 <p class="text-muted">Tourn Played: 15</p>
                                 <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>

@@ -36,7 +36,7 @@ class Home extends React.Component {
 
                     <h1 class="display-4">PLAY TRADITIONAL GAME</h1>
                     <p class="lead">Experience new traditional game play</p>
-                    <a class="btn btn-warning btn-lg" href="Game" role="button">PLAY NOW</a>
+                    <a class="btn btn-warning btn-lg" href="Login" role="button">PLAY NOW</a>
 
                 </div>
                 

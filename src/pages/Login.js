@@ -56,6 +56,9 @@ const Login = (props) => {
                             </FormGroup>
 
                             <Button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</Button>
+                            <p className="register-first text-right">
+                                <a href="Register"> Register first?</a>
+                            </p>
                             <p className="forgot-password text-right">
                                 <a href="#"> Forgot password?</a>
                             </p>
