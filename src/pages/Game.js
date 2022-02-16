@@ -160,9 +160,7 @@ class Game extends Component{
                     </div>
                 </div>
                 
-                <Helmet>
-                <script src="../assets/js/game-suit.js" type="text/javascript"></script>
-                </Helmet>
+
                 
                 
 
