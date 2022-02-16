@@ -1,7 +1,6 @@
 import React from "react";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from './pages/Login'
@@ -19,8 +18,8 @@ function App() {
   <Router>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/login" element={<Login/>} />
-            <Route path="/register" element={<Register/>} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register/>} />
             <Route exact path="/game" element={<Game />} />
             <Route exact path="/homepageplayer" element={<Homepageplayers />} />
             <Route exact path="/profile" element={<Profile />} />

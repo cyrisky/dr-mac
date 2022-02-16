@@ -7,7 +7,7 @@ export const withRouter = Component => {
       let params = useParams();
       return (
         <Component
-        history = {navigate}
+        navigate = {navigate}
           {...props}
           router={{ location, navigate, params }}
         />
